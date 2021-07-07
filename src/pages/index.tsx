@@ -1,5 +1,10 @@
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
 
+
+
+import React from 'react';
+import Header from '../components/Header';
 import { getPrismicClient } from '../services/prismic';
 
 import commonStyles from '../styles/common.module.scss';
@@ -24,9 +29,23 @@ interface HomeProps {
   postsPagination: PostPagination;
 }
 
-// export default function Home() {
-//   // TODO
-// }
+ export default function Home() {
+  return(
+    <>
+    <main>
+      <Header />
+        <div>
+          <Link href="#">
+          <a>
+            <strong>Algum título</strong>
+            <p>Pensando em sincronização em vez de ciclos de vida.</p>
+          </a>
+          </Link>
+        </div>
+    </main>
+    </>
+  )
+ }
 
 // export const getStaticProps = async () => {
 //   // const prismic = getPrismicClient();
