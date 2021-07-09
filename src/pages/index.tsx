@@ -1,8 +1,6 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-
-
-
+import { FiCalendar, FiUser} from 'react-icons/fi';
 import React from 'react';
 import Header from '../components/Header';
 import { getPrismicClient } from '../services/prismic';
@@ -32,16 +30,30 @@ interface HomeProps {
  export default function Home() {
   return(
     <>
-    <main>
+    <main className={commonStyles.container}>
       <Header />
-        <div>
-          <Link href="#">
-          <a>
+        <div className={styles.posts}>
+          <Link href="/">
+          <a className={styles.post}>
             <strong>Algum título</strong>
             <p>Pensando em sincronização em vez de ciclos de vida.</p>
+            <ul>
+              <li>
+                <FiCalendar />
+                15 Mar 2021
+              </li>
+              <li>
+                <FiUser />
+                Caroline Cunha
+              </li>
+            </ul>
           </a>
           </Link>
+          <button type="button">
+          Carregar mais posts
+        </button>
         </div>
+        
     </main>
     </>
   )
